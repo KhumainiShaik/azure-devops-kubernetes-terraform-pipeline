@@ -26,14 +26,14 @@ resource "azurerm_kubernetes_cluster" "terraform-k8s" {
     name            = "agentpool"
     node_count      = var.node_count
     #vm_size         = "standard_b2ms"
-     vm_size         = "Standard_B1s"
+     vm_size         = "Standard_DS2_v2"
   }
 
   service_principal {
     client_id     = var.client_id
     client_secret = var.client_secret
   }
-
+role_based_access_control_enabled = true
   tags = {
     Environment = var.environment
   }
