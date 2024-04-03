@@ -11,7 +11,7 @@ steps:
 - task: DownloadSecureFile@1
   name: publickey
   inputs:
-    secureFile: 'azure_rsa.pub'
+    secureFile: 'azure-rsa.pub'
 
 - task: TerraformTaskV4@4
   inputs:
