@@ -42,14 +42,20 @@ module "khumaini-cluster" {
 
   #vpc_id         = "vpc-1234556abcdef"
 
-  eks_managed_node_groups = [
-    {
-      instance_type = "t2.micro"
-      max_capacity  = 5
-      desired_capacity = 3
-      min_capacity  = 3
+  eks_managed_node_group_defaults = {
+    instance_types = ["t2.small", "t2.medium"]
+  }
+
+  eks_managed_node_groups = {
+    blue = {}
+    green = {
+      min_size     = 1
+      max_size     = 10
+      desired_size = 1
+
+      instance_types = ["t2.medium"]
     }
-  ]
+  }
 }
 
 data "aws_eks_cluster" "cluster" {
