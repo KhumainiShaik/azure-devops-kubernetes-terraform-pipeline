@@ -40,6 +40,7 @@ module "khumaini-cluster" {
   subnet_ids      = ["subnet-01c33deda6595001a", "subnet-0698a7795b67738aa"] #CHANGE
   #subnets = data.aws_subnet_ids.subnets.ids
   vpc_id          = aws_default_vpc.default.id
+  cluster_endpoint_public_access  = true
 
   #vpc_id         = "vpc-1234556abcdef"
 
