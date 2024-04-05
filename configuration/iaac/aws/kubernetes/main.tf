@@ -60,11 +60,11 @@ module "khumaini-cluster" {
 }
 
 data "aws_eks_cluster" "cluster" {
-  name = module.khumaini-cluster.cluster_id
+  name = module.khumaini-cluster.cluster_name
 }
 
 data "aws_eks_cluster_auth" "cluster" {
-  name = module.khumaini-cluster.cluster_id
+  name = module.khumaini-cluster.cluster_name
 }
 
 
