@@ -36,7 +36,7 @@ provider "kubernetes" {
 module "khumaini-cluster" {
   source          = "terraform-aws-modules/eks/aws"
   cluster_name    = "khumaini-cluster"
-  cluster_version = "1.23"
+  cluster_version = "1.24"
   subnet_ids      = ["subnet-01c33deda6595001a", "subnet-0698a7795b67738aa"] #CHANGE
   #subnets = data.aws_subnet_ids.subnets.ids
   vpc_id          = aws_default_vpc.default.id
